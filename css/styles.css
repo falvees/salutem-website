@@ -181,6 +181,7 @@
 #benefits .content {
     width: 100%;
 }
+
 #benefits .listBenefits {
     display: flex;
     padding: 0 50px;
@@ -240,6 +241,18 @@
     }
     #benefits .listBenefits {
         padding: 0 30px;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    #benefits .listBenefits:first-child {
+        margin-top: 100px;
+    }
+    #benefits header>div:first-child>p {
+        font-size: 30px;
+    }
+    #benefits .listBenefits>p, #benefits header>p {
+        font-size: 24px;
     }
 }
 
@@ -732,14 +745,14 @@
 }
 
 @media only screen and (max-width: 600px) {
-   .address-footer {
-       font-size: 13px;
-       padding-left: 10px;
-   }
-   #footer [alt="logo-footer"] {
-       height: 52px;
-   }
-   .devs {
-       font-size: 14px;
-   }
+    .address-footer {
+        font-size: 13px;
+        padding-left: 10px;
+    }
+    #footer [alt="logo-footer"] {
+        height: 52px;
+    }
+    .devs {
+        font-size: 14px;
+    }
 }

@@ -32,7 +32,7 @@
         <nav class="menu" id="menu">
             <ul>
                 <li class="nav-item" id="nav-home">
-                    <a href="#" class="active">Home</a>
+                    <a href="#home" class="active">Home</a>
                     <hr>
                 </li>
                 <li class="nav-item" id="nav-about">
@@ -108,7 +108,8 @@
                     <p>Benefícios para você!</p>
                 </div>
 
-                <p>São vários os benefícios, mas dentre a grande quantidade de vantagem de ter o plano de saúde animal da Salutem, destacamos abaixo os mais importantes:</p>
+                <p>São vários os benefícios, mas dentre a grande quantidade de vantagem de ter o plano de saúde animal
+                    da Salutem, destacamos abaixo os mais importantes:</p>
 
             </header>
 
@@ -421,7 +422,7 @@
     window.onscroll = function () {
         // VERIFICA SE A PAGINA FEZ SCROLL DE 90PX E ADICIONA BACKGROUND NO MENU E SOME COM AS REDES SOCIAIS OU INVERSO
         window.scrollY >= 90 ?
-             $(".header-site").addClass("fixed") : $(".header-site").removeClass("fixed")
+            $(".header-site").addClass("fixed") : $(".header-site").removeClass("fixed")
 
         // VERIFICA ONDE ESTÁ CADA SESSAO PARA PODE ATIVAR A <li> DE ACORDO COM A DIV VISIVEL
         window.scrollY <= (home.offsetTop + home.offsetHeight - 90) ? $("#nav-home a").hasClass("active") ? '' : $(".nav-item a").removeClass("active") + $("#nav-home a").addClass("active") :
@@ -430,6 +431,14 @@
                     window.scrollY <= (clinics.offsetTop + clinics.offsetHeight - 90) ? $("#nav-clinics a").hasClass("active") ? '' : $(".nav-item a").removeClass("active") + $("#nav-clinics a").addClass("active") :
                         window.scrollY <= (plans.offsetTop + plans.offsetHeight - 90) ? $("#nav-plans a").hasClass("active") ? '' : $(".nav-item a").removeClass("active") + $("#nav-plans a").addClass("active") : ''
     };
+
+
+    // Add classe active no header para conseguir adicionar o css para menu mobile
+    $(document).ready(function () {
+        $('#navbar').change(function () {
+            this.checked ? $(".header-site").addClass('active') + $('body').css('overflow', 'hidden') : $(".header-site").removeClass('active') + $('body').css('overflow', 'auto')
+        });
+    });
 
     // ATIVA <li> CLICADA
     $('.nav-item a').on('click', function (e) {
@@ -440,13 +449,13 @@
     });
 
     // NAVEGA POR LINK INTERNO ONDE OS HREF USAM #
-    $('.nav a[href^="#"]').on('click', function (e) {
+    $('.nav-item a[href^="#"]').on('click', function (e) {
         e.preventDefault();
         var id = $(this).attr('href'),
             targetOffset = $(id).offset().top;
 
         $('html, body').animate({
-            scrollTop: targetOffset - 200
+            scrollTop: targetOffset - 70
         }, 500);
     });
 

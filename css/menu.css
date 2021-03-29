@@ -5,7 +5,12 @@
     position: fixed;
     transition: background-color 1s;
     z-index: 20;
+    height: auto;
     /* align-items: center; */
+}
+
+.header-site.active {
+    height: 100%;
 }
 
 .header-site.fixed {
@@ -20,11 +25,11 @@
 .header-site.fixed .menu ul {
     padding-right: 10px;
 }
+
 .header-site.fixed>[alt="logo-header"] {
     height: 30px;
     margin: 20px;
-    
-} 
+}
 
 .header-site #menu {
     padding-right: 20px;
